@@ -1,6 +1,6 @@
 import art
 from functions import add, subtract, multiply, divide
-
+import os
 operations = {
     "+": add,
     "-": subtract,
@@ -30,7 +30,7 @@ def calculator():
             num1 = answer
         else:
             should_accumulate = False
-            print("\n" * 20)
+            os.system('cls' if os.name == 'nt' else 'clear')
             calculator()
 
 
