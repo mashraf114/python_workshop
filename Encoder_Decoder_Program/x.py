@@ -5,17 +5,15 @@ text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
 
-def encrypt(original_text,shift_amount):
-    encoded_letter = ""
+
+
+
+def encrypt(original_text, shift_amount):
+    cipher_text = ""
     for letter in original_text:
-        if alphabet.index(letter) + shift_amount >= 25:
-            new_position= (alphabet.index(letter)-25) + shift_amount
-            encoded_letter += alphabet[new_position]
+        shifted_position = alphabet.index(letter) + shift_amount
+        shifted_position %= len(alphabet)
+        cipher_text += alphabet[shifted_position]
+    print(f"Here is the encoded result: {cipher_text}")
 
-        else:
-            new_position= (alphabet.index(letter)+shift_amount)
-            encoded_letter += alphabet[new_position]
-    print(encoded_letter)
-
-encrypt(text,shift)
 
