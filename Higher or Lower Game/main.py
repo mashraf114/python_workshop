@@ -12,7 +12,7 @@
 # Turn the problem / task into comments in my code
 
 from art import logo, vs
-from random import choice,random
+from random import choice
 from game_data import data
 
 first_choice = (choice(data))
@@ -31,10 +31,7 @@ s_country = second_choice['country']
 def compare():
     print(f"Compare A: {f_name}, {f_description},{f_country}")
     print(vs)
-    print(f"Agianst B: {s_name}, {s_description},{s_country}")
-    a = f_followers
-    b = s_followers
-
+    print(f"Against B: {s_name}, {s_description},{s_country}")
     player_choice = input("Who has the most followers? 'A' or 'B': ").lower()
     if f_followers > s_followers and player_choice == 'a':
         print(f"Correct! {f_name} has more followers")
